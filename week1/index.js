@@ -100,9 +100,6 @@ function App() {
                             return i;
                           })
                         );
-                        {
-                          /*  */
-                        }
                         // 產品狀態為 disable 時，無法查看產品細節
                         if (!item.is_enabled) {
                           setTempProduct(false);

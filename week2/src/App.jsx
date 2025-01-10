@@ -287,7 +287,6 @@ function App() {
     );
   }
 
-  console.log(products);
   // 依照 isLoggedIn 狀態切換畫面
   return (
     <>

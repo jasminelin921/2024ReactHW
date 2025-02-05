@@ -1,0 +1,386 @@
+@import "bootstrap/scss/bootstrap.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+h1 {
+  font-family: "DM Serif Text";
+  color: rgb(90, 103, 67);
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-family: "Noto Serif TC";
+  font-weight: 700;
+  letter-spacing: 0.07rem;
+  color: rgb(90, 103, 67);
+  margin-bottom: 1.2rem;
+}
+
+body {
+  background-color: rgb(143 164 105);
+  div.loading {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -60px 0 0 -60px;
+    .loadingItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32%;
+      height: 0;
+      padding-top: 31%;
+      margin-bottom: 3%;
+      background-color: #c7d2b2;
+      animation: rotateItem 3s infinite;
+    }
+    @keyframes rotateItem {
+      0%,
+      100% {
+        transform: rotate(-45deg) scale(0.8);
+      }
+      25% {
+        transform: rotate(-90deg) scale(1);
+      }
+      50% {
+        transform: rotate(45deg) scale(0.8);
+      }
+      75% {
+        transform: rotate(90deg) scale(1);
+      }
+    }
+  }
+  div.loginPage {
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 23px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -450px;
+    display: flex;
+    flex-wrap: nowrap;
+    section.loginForm,
+    section.loginImg {
+      display: flex;
+      padding: 1.5rem;
+    }
+    section.loginForm {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 5 0 500px;
+      font-size: 17px;
+      form {
+        letter-spacing: 0.08rem;
+        .inputGroup {
+          margin-bottom: 15px;
+          .form-label {
+            margin-bottom: 0.25rem;
+          }
+          .form-control {
+            font-size: 17px;
+            width: 250px;
+          }
+        }
+        .btn {
+          margin-top: 0.8rem;
+          width: 250px;
+          background-color: #9ea78d;
+          font-size: 17px;
+          letter-spacing: 0.08rem;
+          color: white;
+        }
+      }
+      .text {
+        margin-top: 3rem;
+        a {
+          color: rgb(90 103 67);
+          text-decoration: none;
+        }
+      }
+    }
+    section.loginImg {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      flex: 4 0 400px;
+      background-image: url("https://images.unsplash.com/photo-1653842647607-cc422aa39e42?q=80&w=900&auto=format");
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 0 0.8rem 0.8rem 0;
+      color: white;
+      font-size: 17px;
+      div.slogan {
+        margin-bottom: 0.9rem;
+        h1 {
+          color: white;
+        }
+      }
+    }
+  }
+  div.modal {
+    @media (min-width: 576px) {
+      .modal-dialog {
+        max-width: 1000px;
+      }
+    }
+    .modal-content {
+      padding: 0.3rem 1rem;
+    }
+    input.prices::-webkit-outer-spin-button,
+    input.prices::-webkit-inner-spin-button {
+      /* 上下調整按鈕（外部和內部的 spinner 按鈕） */
+      -webkit-appearance: none; /* 禁用瀏覽器對該元素的預設樣式（上下調整鍵） */
+      margin: 0;
+    }
+    hr {
+      color: rgb(80, 91, 59);
+    }
+    span {
+      color: red;
+      margin-left: 2px;
+    }
+    .mainImg {
+      border-radius: 0.5rem;
+      margin-top: 10px;
+    }
+    .updateImg {
+      display: flex;
+      align-items: start;
+      #btnByUpdateImg {
+        width: 83.2px;
+        height: 47px;
+        padding: 0px 14px;
+        margin-left: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+      }
+    }
+    .otherImgsInput {
+      display: flex;
+      align-items: start;
+      #btnByAddImg {
+        width: 77.2px;
+        height: 47px;
+        margin-left: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+      }
+    }
+    .otherImgs {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      .otherImgGroup {
+        margin-bottom: 11px;
+        position: relative;
+        .otherImg {
+          border-radius: 0.5rem;
+          margin-right: 20px;
+          position: relative;
+          z-index: 1;
+          width: 151px;
+        }
+        .btnByDelImg {
+          background-color: rgb(251, 110, 82); /* 背景半透明 */
+          border-radius: 50%;
+          border: 2px solid rgb(251, 110, 82);
+          width: 25px;
+          height: 25px;
+          color: white;
+          font-size: 20px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0.07rem;
+          position: absolute;
+          z-index: 2;
+          top: 6px;
+          right: 25px;
+        }
+        .btnByDelImg:hover {
+          background-color: rgb(255, 42, 0);
+          border: 2px solid rgb(255, 42, 0);
+        }
+      }
+    }
+
+    .btn-save {
+      background-color: rgb(143 164 105);
+      font-size: 17px;
+      letter-spacing: 0.08rem;
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+    }
+    .btn-save:hover {
+      background-color: rgb(90, 103, 67);
+      color: white;
+    }
+    .btn-cancel {
+      background-color: rgb(172, 174, 166);
+      font-size: 17px;
+      letter-spacing: 0.08rem;
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 0px;
+    }
+    .btn-cancel:hover {
+      background-color: rgb(107, 107, 104);
+      color: white;
+    }
+  }
+
+  div.productsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #btnByLogout {
+      margin: 1rem;
+      width: 100px;
+      background-color: #c7d2b2;
+      font-size: 17px;
+      font-weight: 600;
+      color: rgb(90, 103, 67);
+      position: relative;
+      left: 87%;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 23px 0px;
+    }
+    #btnByLogout:hover {
+      background-color: rgb(90, 103, 67);
+      color: white;
+    }
+    div.products {
+      width: 1200px;
+      margin: 1rem 0 3rem 0;
+      .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        #btnByAdd {
+          margin: 1rem;
+          width: 120px;
+          background-color: #c7d2b2;
+          font-size: 17px;
+          font-weight: 600;
+          color: rgb(90, 103, 67);
+          position: relative;
+          left: 73%;
+          bottom: 15px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
+        }
+        #btnByAdd:hover {
+          background-color: rgb(143 164 105);
+          color: white;
+        }
+      }
+      #productsList,
+      #productDetail {
+        width: 1200px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 0.8rem;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 23px 0px;
+        padding: 1.5rem 2rem;
+      }
+      #productsList {
+        margin-bottom: 1rem;
+        table {
+          .table-group-divider {
+            border-top: 2px solid rgb(90, 103, 67);
+          }
+          // th.name{
+          //   width: 250px;
+          // }
+          td {
+            vertical-align: middle; // 垂直置中
+          }
+          .btn {
+            background-color: white;
+            font-size: 17px;
+            letter-spacing: 0.08rem;
+            color: rgb(90, 103, 67);
+            border: 1.5px solid rgb(143 164 105);
+          }
+          .btn:hover {
+            background-color: rgb(143 164 105);
+            color: white;
+          }
+          #btnByState {
+            margin-left: 10px;
+          }
+          #btnByEdit {
+            margin-right: 10px;
+          }
+          .btnByDelete {
+            background-color: white;
+            color: rgb(164, 115, 105);
+            border: 1.5px solid rgb(164, 115, 105);
+          }
+          .btnByDelete:hover {
+            background-color: rgb(164, 115, 105);
+            color: white;
+            border: 1.5px solid rgb(164, 115, 105);
+          }
+          #productState {
+            display: flex;
+            align-items: center;
+            #state {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      #pageNation {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        list-style-type: none;
+        .pageItem {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 3.5px;
+        }
+        .pageLink {
+          text-decoration: none;
+          color: rgb(90, 103, 67);
+          background-color: white;
+          width: 40px;
+          height: 40px;
+          border-radius: 0.5rem;
+        }
+        .pageLink:hover {
+          background-color: #c7d2b2;
+          color: white;
+          cursor: pointer;
+        }
+        .pageLinkNoClick {
+          color: rgb(90, 103, 67);
+          text-decoration: none;
+          cursor: default;
+        }
+        .pageText {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border: 1.8px solid #c7d2b2;
+          border-radius: 0.5rem;
+        }
+      }
+    }
+  }
+}
